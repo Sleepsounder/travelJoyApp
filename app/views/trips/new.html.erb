@@ -1,12 +1,34 @@
-<%= form_with scope: :trips, local: true do |form| %>
+<%= link_to 'See All Trips', controller: 'trips' %>
+<%= form_with scope: :trip, url: trips_path, local: true do |form| %>
+
+  <% if @trip.errors.any? %>
+    <div id="error_explanation">    
+      <h2>
+        <%= pluralize(@trip.errors.count, "error") %> prohibited
+          this article from being saved:
+      </h2>
+      <ul>
+        <% @trip.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    
+
   <p>
-    <%= form.label :title %><br>
+    <%= form.label :name_of_trip %><br>
     <%= form.text_field :title %>
   </p>
 
   <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
+    <%= form.label :start_date %><br>
+    <%= form.date_field :start_date %>
+  </p>
+
+  <p>
+    <%= form.label :end_date %><br>
+    <%= form.date_field :end_date %>
   </p>
 
   <p>
