@@ -17,6 +17,10 @@
       <td><%= trip.start_date %></td>
       <td><%= trip.end_date %>
       <td><%= link_to 'Show', trip_path(trip) %></td>
+      <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
+      <td><%= link_to 'Delete', trip_path(trip), 
+              method: :delete,
+              data: { confirm: 'Are you sure you wanna delete this, yo?' } %></td>
     </tr>
   <% end %>
 </table>

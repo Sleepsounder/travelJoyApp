@@ -1,8 +1,8 @@
-<%= link_to 'See All Trips', controller: 'trips' %>
-<br>
-
 <tr>
       <td><%= @trip.title %></td><br>
       <td><%= @trip.start_date %></td><br>
       <td><%= @trip.end_date %>
 </tr>
+
+<%= link_to 'Edit Trip', edit_trip_path(@trip) %>
+<%= link_to 'See All Trips', controller: 'trips' %>
