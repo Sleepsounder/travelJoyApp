@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  # get 'trips/index'
-  # get 'trips/new'
   
-  resources :trips
+  resources :trips do
+    resources :trip_events
+  end
 
   root 'trips#index'
 end

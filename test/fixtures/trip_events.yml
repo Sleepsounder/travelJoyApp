@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  eventname: MyString
+  eventtime: 2019-02-13 12:46:17
+  location: MyString
+  journal: MyText
+  trip: one
+
+two:
+  eventname: MyString
+  eventtime: 2019-02-13 12:46:17
+  location: MyString
+  journal: MyText
+  trip: two
