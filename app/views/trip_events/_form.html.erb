@@ -1,0 +1,25 @@
+<%= form_with(model: [@trip, @trip.trip_events.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :event_name %><br>
+    <%= form.text_field :eventname %>
+  </p>
+
+  <p>
+    <%= form.label :event_time %><br>
+    <%= form.datetime_field :eventtime %>
+  </p>
+
+  <p>
+    <%= form.label :location %><br>
+    <%= form.text_field :location %>
+  </p>
+
+  <p>
+    <%= form.label :journal_entry %><br>
+    <%= form.text_area :journal %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
