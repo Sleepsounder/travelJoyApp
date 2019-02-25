@@ -13,15 +13,5 @@
 <%= render @trip.trip_events %>
 
 
-**********just moved this block from /trip_events/_form ***figure out path********
-<p>
-<%= link_to 'Delete This Event', [trip_event.trip, trip_event],
-             method: :delete,
-             data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Edit This Event', edit_trip_trip_event_path(@trip) %><br>
-</p>
-**********just moved this block from /trip_events/_form***********************
-
-
 <h2>Add Event to Trip</h2>
 <%= render 'trip_events/form' %>

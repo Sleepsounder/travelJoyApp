@@ -6,13 +6,12 @@ class TripEventsController < ApplicationController
     redirect_to trip_path(@trip)
   end
 
-  def show
+  def edit
     @trip = Trip.find(params[:trip_id])
     @trip_event = @trip.trip_events.find(params[:id])
-    redirect_to edit_trip_trip_event_path(@trip)
   end
 
-  def edit
+  def show
     @trip = Trip.find(params[:trip_id])
     @trip_event = @trip.trip_events.find(params[:id])
     redirect_to edit_trip_trip_event_path(@trip)
