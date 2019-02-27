@@ -20,11 +20,12 @@
 </p>
 
 <p>
-  <%= link_to 'Delete This Event', [trip_event.trip, trip_event],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %><br>
 
   <%= link_to 'Edit This Event', [trip_event.trip, trip_event] %><br>
+
+  <%= link_to 'Delete This Event', [trip_event.trip, trip_event],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
 </p>
   
   

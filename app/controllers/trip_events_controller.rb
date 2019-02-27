@@ -11,6 +11,18 @@ class TripEventsController < ApplicationController
     @trip_event = @trip.trip_events.find(params[:id])
   end
 
+  def update
+    @trip = Trip.find(params[:trip_id])
+    @trip_event = @trip.trip_events.find(params[:id])
+
+    if @trip_event.update(trip_event_params)
+      redirect_to @trip
+    else 
+      render 'edit'
+    end
+  end
+
+
   def show
     @trip = Trip.find(params[:trip_id])
     @trip_event = @trip.trip_events.find(params[:id])
