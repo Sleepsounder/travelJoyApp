@@ -1,4 +1,5 @@
 <%= form_with(model: [@trip, @trip.trip_events.build ], local: true) do |form| %>
+  
   <p>
     <%= form.label :event_name %><br>
     <%= form.text_field :eventname %>
