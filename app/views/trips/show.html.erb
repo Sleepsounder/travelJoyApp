@@ -1,57 +1,17 @@
-<tr>
-      <td><%= @trip.title %></td><br>
-      <td><%= @trip.start_date %></td><br>
-      <td><%= @trip.end_date %>
-</tr>
+<h1>
+      <td><%= @trip.title %></td>
+</h1>
+<h2>  
+  <td><%= @trip.start_date.strftime('%B %d, %Y') %> to <%= @trip.end_date.strftime('%B %d, %Y') %></td>
+</h2>
+
+
+<%= link_to 'Edit Trip Overview', edit_trip_path(@trip) %><br>
+<%= link_to 'See All Trips', controller: 'trips' %>
 
 <h2>Events</h2>
-<%= @trip.trip_events.each do |event| %>
-  <p>
-    <strong>Trip:</strong>
-    <%= event.eventname %>
-  </p>
+<%= render @trip.trip_events %>
 
-  <p>
-    <strong>Time:</strong>
-    <%= event.eventtime %>
-  </p>
 
-  <p>
-    <strong>Location:</strong>
-    <%= event.location %>
-  </p>
-
-  <p>
-    <strong>Journal Entry:</strong>
-    <%= event.journal %>
-  </p>
-<% end %>
 <h2>Add Event to Trip</h2>
-<%= form_with(model: [@trip, @trip.trip_events.build ], local: true) do |form| %>
-  <p>
-    <%= form.label :event_name %><br>
-    <%= form.text_field :eventname %>
-  </p>
-
-  <p>
-    <%= form.label :event_time %><br>
-    <%= form.datetime_field :eventtime %>
-  </p>
-
-  <p>
-    <%= form.label :location %><br>
-    <%= form.text_field :location %>
-  </p>
-
-  <p>
-    <%= form.label :journal_entry %><br>
-    <%= form.text_area :journal %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
-
-<%= link_to 'Edit Trip', edit_trip_path(@trip) %>
-<%= link_to 'See All Trips', controller: 'trips' %>
+<%= render 'trip_events/form' %>
