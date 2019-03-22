@@ -1,4 +1,5 @@
 class Trip < ApplicationRecord
+  belongs_to :user
   has_many :trip_events, dependent: :destroy
   validates :title, presence: true,
                     length: { minimum: 3 }
