@@ -1,5 +1,9 @@
 class TripEventsController < ApplicationController
 
+
+  def new
+  end
+  
   def create
     @trip = Trip.find(params[:trip_id])
     @trip_event = @trip.trip_events.create(trip_event_params)
